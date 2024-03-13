@@ -16,7 +16,17 @@ pipeline {
                 sh 'docker build -t my-flask-app .'
             }
         }
-        
+
+        stage('Check') {
+            steps {
+                // Start the Flask development server
+                sh 'flask run --host=0.0.0.0 & sleep 10' // Start the server in the background
+            }
+        }
+
+
+
+
         // Add more stages as needed for your pipeline
     // }
     // // Optionally, you can define post actions like cleanup or notifications
