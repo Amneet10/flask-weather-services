@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository
-                git 'https://github.com/Amneet10/flask-weather-services.git'
+                git branch: 'main', url: 'https://github.com/Amneet10/flask-weather-services.git'
             }
         }
         // Add more stages as needed for your pipeline
