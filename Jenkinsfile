@@ -20,7 +20,7 @@ pipeline {
         stage('Check') {
             steps {
                 // Start the Flask development server
-                sh 'flask run --host=0.0.0.0 & sleep 10' // Start the server in the background
+                sh 'docker run -p 5000:5000 my-flask-app flask run --host=0.0.0.0 & sleep 5' // Start the server in the background
             }
         }
 
